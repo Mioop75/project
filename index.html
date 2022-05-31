@@ -32,7 +32,6 @@
       background-image: url("img/bg.jpg");
       background-repeat: no-repeat;
       background-size: cover;
-      background-position: center;
       overflow: auto;
     }
 
@@ -40,7 +39,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      min-height: calc(var(--vh, 1vh) * 100)
     }
 
     .card {
@@ -132,10 +131,6 @@
         setHeight();
         window.addEventListener('resize', setHeight);
       })();
-
-    document.querySelector(".card__btn").addEventListener("click", () => {
-      alert("Hello world");
-    })
   </script>
 </body>
 
