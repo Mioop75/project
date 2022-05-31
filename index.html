@@ -81,20 +81,34 @@
     }
 
     .card__btn {
-      font-family: Movavi, sans-serif;
+      position: relative;
+    }
+
+    .card__btn::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
       width: 200px;
       height: 82px;
       background-image: url("img/button.png");
       background-repeat: no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    }
+
+    .card__btn button {
+      display: block;
+      font-family: Movavi, sans-serif;
       font-weight: 600;
       font-size: 25px;
       color: #FFFFFF;
       text-shadow: 0px 1px 0.3px rgba(0, 0, 0, 0.5);
-      position: relative;
       cursor: default;
+      z-index: 3;
+      position: relative;
+      top: 23px;
+      margin: 0 auto;
     }
 
     .card__btn:active {
@@ -104,7 +118,6 @@
     .card__img {
       max-width: 184px;
     }
-    
   </style>
 </head>
 
@@ -117,20 +130,22 @@
         <img src="img/01.png" alt="" class="card__img">
         <img src="img/02.png" alt="" class="card__img">
       </div>
-      <button class="card__btn">
-        GOT IT
-      </button>
+      <div class="card__btn">
+        <button>
+          <span>GOT IT</span>
+        </button>
+      </div>
     </div>
   </div>
   <script>
     (function init100vh() {
-        function setHeight() {
-          let vh = window.innerHeight * 0.01;
-          document.documentElement.style.setProperty('--vh', `${vh}px`);
-        }
-        setHeight();
-        window.addEventListener('resize', setHeight);
-      })();
+      function setHeight() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      }
+      setHeight();
+      window.addEventListener('resize', setHeight);
+    })();
   </script>
 </body>
 
